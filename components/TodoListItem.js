@@ -8,7 +8,7 @@ import
 } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 
-const TodoListItem = () => {
+const TodoListItem = ({textValue, id, checked}) => {
     return(
         <View style={styles.container}>
             <TouchableOpacity>
@@ -16,13 +16,9 @@ const TodoListItem = () => {
                     <Icon name="downcircleo" size={30} color="#3143e8" />
                 </View>
             </TouchableOpacity> 
-            <Text style={[styles.text, styles.strikeText]}>
-                Items will be shown here
-            </Text>
-            <TouchableOpacity>
-                <Text style={styles.buttonContainer}>
-                    <Icon name="delete" size={30} color="#e33057" />
-                </Text>
+            <Text style={[styles.text, styles.strikeText]}>{textValue}</Text>
+            <TouchableOpacity style={styles.buttonContainer}>
+                <Icon name="delete" size={30} color="#e33057" />
             </TouchableOpacity>
         </View>
     );

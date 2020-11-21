@@ -6,14 +6,24 @@ import
   StyleSheet,
   TouchableOpacity,  
 } from 'react-native';
+import Icon from 'react-native-vector-icons/AntDesign';
 
 const TodoListItem = () => {
     return(
         <View style={styles.container}>
             <TouchableOpacity>
-                <View style={styles.circle} />
+                <View style={styles.completeCircle}>
+                    <Icon name="downcircleo" size={30} color="#3143e8" />
+                </View>
             </TouchableOpacity> 
-            <Text style={styles.text}>TodoList items will be shown here</Text>
+            <Text style={[styles.text, styles.strikeText]}>
+                Items will be shown here
+            </Text>
+            <TouchableOpacity>
+                <Text style={styles.buttonContainer}>
+                    <Icon name="delete" size={30} color="#e33057" />
+                </Text>
+            </TouchableOpacity>
         </View>
     );
 };
@@ -34,14 +44,20 @@ const styles = StyleSheet.create({
         marginVertical: 20,
         width: 100,
     },
-    circle: {
-        width: 30,
-        height: 30,
-        borderRadius: 15,
-        borderColor: 'blue',
-        borderWidth: 2,
-        marginRight: 15,
+    completeCircle: {
+        marginRight: 20,
         marginLeft: 20,
+    },
+    strikeText: {
+        color: '#bbb',
+        textDecorationLine: 'line-through',
+    },
+    unstrikeText: {
+        color: '#29323c',   
+    },
+    buttonContainer: {
+        marginVertical: 10,
+        marginHorizontal: 25,
     },
 });
 

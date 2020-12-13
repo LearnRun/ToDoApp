@@ -8,4 +8,4 @@ Tutorial using React Native
 # Original Link
 
 
-[This Link](https://jeffgukang.github.io/react-native-tutorial/docs/basic-tutorial/basic-features(todolist))
+[This Link](https://developer.android.com/codelabs/build-your-first-android-app-kotlin#0)
